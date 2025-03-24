@@ -97,7 +97,7 @@
     &__icon {
         position: relative;
         margin-top: 3.5rem;
-        
+
         &,
         &::before,
         &::after {
@@ -119,10 +119,23 @@
         &::after {top: .8rem;}
     }
 
-    &__button:hover &icon::before {
+    &__button:hover &__icon::before {
         top: -1rem;
     }
-    &__button:hover &icon::after {
+    &__button:hover &__icon::after {
         top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+        &::before {
+            top: 0;
+            transform: rotate(135deg);    
+        }
+
+        &::after {
+            top: 0;
+            transform: rotate(-135deg);    
+        }
     }
 }
